@@ -22,6 +22,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_current_location.*
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToInt
@@ -70,7 +71,7 @@ class CurrentLocationFragment : Fragment() {
                     getCurrentWeather(latitude, longitude)
                     getCurrentCity(latitude, longitude)
                 },
-                onError = {e -> println("this is error $e")}
+                onError = {e -> Timber.e(e)}
             )
 
 //<----Codes for Google autocomplete Fragment. More here: https://developers.google.cn/maps/documentation/places/android-sdk/autocomplete--->
@@ -148,7 +149,7 @@ class CurrentLocationFragment : Fragment() {
                     binding.currentFeelsLike.text = it.current.feelsLike.roundToInt().toString() + "°" //detail
 
 
-                    //5 hourly update textview
+                    //12 hourly update textview
                     binding.hourlyIconOne.setImageDrawable(context?.getDrawable(setIcon(it.hourly[1].weather[0].icon)))
                     binding.tempOne.text = it.hourly[1].temp.roundToInt().toString()
                     binding.timeOne.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[1].dt.toLong()*1000))
@@ -168,6 +169,36 @@ class CurrentLocationFragment : Fragment() {
                     binding.hourlyIconFive.setImageDrawable(context?.getDrawable(setIcon(it.hourly[5].weather[0].icon)))
                     binding.tempFive.text = it.hourly[5].temp.roundToInt().toString()
                     binding.timeFive.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[5].dt.toLong()*1000))
+
+                    binding.hourlyIconSix.setImageDrawable(context?.getDrawable(setIcon(it.hourly[6].weather[0].icon)))
+                    binding.tempSix.text = it.hourly[6].temp.roundToInt().toString()
+                    binding.timeSix.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[6].dt.toLong()*1000))
+
+                    binding.hourlyIconSeven.setImageDrawable(context?.getDrawable(setIcon(it.hourly[7].weather[0].icon)))
+                    binding.tempSeven.text = it.hourly[7].temp.roundToInt().toString()
+                    binding.timeSeven.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[7].dt.toLong()*1000))
+
+                    binding.hourlyIconEight.setImageDrawable(context?.getDrawable(setIcon(it.hourly[8].weather[0].icon)))
+                    binding.tempEight.text = it.hourly[8].temp.roundToInt().toString()
+                    binding.timeEight.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[8].dt.toLong()*1000))
+
+                    binding.hourlyIconNine.setImageDrawable(context?.getDrawable(setIcon(it.hourly[9].weather[0].icon)))
+                    binding.tempNine.text = it.hourly[9].temp.roundToInt().toString()
+                    binding.timeNine.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[9].dt.toLong()*1000))
+
+                    binding.hourlyIconTen.setImageDrawable(context?.getDrawable(setIcon(it.hourly[10].weather[0].icon)))
+                    binding.tempTen.text = it.hourly[10].temp.roundToInt().toString()
+                    binding.timeTen.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[10].dt.toLong()*1000))
+
+                    binding.hourlyIconEleven.setImageDrawable(context?.getDrawable(setIcon(it.hourly[11].weather[0].icon)))
+                    binding.tempEleven.text = it.hourly[11].temp.roundToInt().toString()
+                    binding.timeEleven.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[11].dt.toLong()*1000))
+
+                    binding.hourlyIconTwelve.setImageDrawable(context?.getDrawable(setIcon(it.hourly[12].weather[0].icon)))
+                    binding.tempTwelve.text = it.hourly[12].temp.roundToInt().toString()
+                    binding.timeTwelve.text = SimpleDateFormat("h:mm a").format(Date(it.hourly[12].dt.toLong()*1000))
+
+
 
                     //alerts
                     if (it.alerts != null){

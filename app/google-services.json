@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "333124269908",
-    "project_id": "crashlytics-90a4a",
-    "storage_bucket": "crashlytics-90a4a.appspot.com"
+    "project_number": "892443479448",
+    "project_id": "weathercrashlytics",
+    "storage_bucket": "weathercrashlytics.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:333124269908:android:44567ad8f7e2cfff053ac1",
+        "mobilesdk_app_id": "1:892443479448:android:9619b72dc8e08a2fd92fed",
         "android_client_info": {
           "package_name": "com.example.weatherapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "333124269908-7uvhbeuv5hmtiksac5bsh25osmvvutfc.apps.googleusercontent.com",
+          "client_id": "892443479448-nnvrd86i0ksf4tp45dd9r6h9bfjulv8s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAIcM5wecZK-IczIRpPt2Q6LrH4vPvrPA4"
+          "current_key": "AIzaSyDX4OiqkwGj9E0x0FjnLsdU1uerbvUAgMw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "333124269908-7uvhbeuv5hmtiksac5bsh25osmvvutfc.apps.googleusercontent.com",
+              "client_id": "892443479448-nnvrd86i0ksf4tp45dd9r6h9bfjulv8s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

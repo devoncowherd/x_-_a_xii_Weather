@@ -19,6 +19,7 @@ import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.ui.currentlocation.CurrentLocationFragment
 import com.example.weatherapp.ui.locations.LocationsFragment
 import com.example.weatherapp.ui.weekly.WeeklyFragment
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,11 +39,16 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar!!.title = "Weather App"
-
-        fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentLocation, "3").hide(fragmentLocation).commit()
-        fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentWeekly, "2").hide(fragmentWeekly).commit()
-        fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentCurrentLocation, "1").commit()
-
+try {
+    fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentLocation, "3")
+        .hide(fragmentLocation).commit()
+    fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentWeekly, "2")
+        .hide(fragmentWeekly).commit()
+    fm.beginTransaction().add(R.id.nav_host_fragment_activity_main, fragmentCurrentLocation, "1")
+        .commit()
+}catch (e: Exception){
+    Timber.e(e)
+}
         val content: View = findViewById(android.R.id.content)
         content.viewTreeObserver.addOnPreDrawListener(
             object : ViewTreeObserver.OnPreDrawListener {

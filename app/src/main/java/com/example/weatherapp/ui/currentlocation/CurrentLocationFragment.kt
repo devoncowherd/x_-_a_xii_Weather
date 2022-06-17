@@ -92,7 +92,8 @@ class CurrentLocationFragment : Fragment() {
             }
 
             override fun onError(status: Status) {
-                println("An error occurred: $status")
+                Timber.e(status.toString())
+//                println("An error occurred: $status")
             }
         })
 //        <---End of Codes for Google autocomplete Fragment --->
@@ -212,7 +213,8 @@ class CurrentLocationFragment : Fragment() {
                     }
 
                     setFragmentResult("key_to_weekly", bundleOf("daily" to it.daily))},
-                onError = {e -> println("this is error $e")}
+                onError = {e -> Timber.e(e)}
+//                onError = {e -> println("this is error $e")}
             )
     }
 
@@ -229,7 +231,8 @@ class CurrentLocationFragment : Fragment() {
                     var placeName = "$city, $state, $country"
                     autocompleteFragment.setHint(placeName)
                 },
-                onError = {e -> println("this is error $e")}
+                onError = {e -> Timber.e(e)}
+//                onError = {e -> println("this is error $e")}
             )
     }
 

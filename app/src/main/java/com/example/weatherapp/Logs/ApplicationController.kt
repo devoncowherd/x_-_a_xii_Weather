@@ -1,6 +1,7 @@
-package com.example.weatherapp
+package com.example.weatherapp.Logs
 
 import android.app.Application
+import com.example.weatherapp.BuildConfig
 import timber.log.Timber
 
 class ApplicationController : Application() {

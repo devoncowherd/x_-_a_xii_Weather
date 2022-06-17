@@ -57,7 +57,7 @@ lateinit var fakeWeather: AllWeather
 
 
            val res = inter.getCurrentWeather("0","0","0","0")
-            val req = mockServer.takeRequest()
+
 
             res.subscribeBy(
                 onNext = {
@@ -65,6 +65,7 @@ lateinit var fakeWeather: AllWeather
                 },
                 onError = { println("Error: $it")}
             )
+        val req = mockServer.takeRequest()
             assertEquals("onecal?lat=0&lon=0&appid=0&units=0", req?.path)
 
     }
